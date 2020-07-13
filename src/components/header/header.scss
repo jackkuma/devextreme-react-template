@@ -39,3 +39,36 @@
     padding: 3px;
   }
 }
+
+.hide{
+  background-color: red;
+  width: 350px; transition:all 1.5s ease-in;}
+.show{
+  background-color: red;
+  width: 72px; transition:all 1.5s ease-in;}
+
+.boss-text-enter{
+  background-color: red;
+  width: 250px;
+  height: 72px;
+}
+.boss-text-enter-active{
+  background-color: red;
+  width: 72px;
+  transition: all 600ms;
+
+}
+.boss-text-enter-done{
+  background-color: red;
+  width: 72px;
+}
+.boss-text-exit-active{
+  background-color: red;
+  width: 72px;
+  transition: opacity 600ms;
+
+}
+.boss-text-exit-done{
+  background-color: red;
+  width: 72px;
+}
