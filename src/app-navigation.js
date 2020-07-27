@@ -18,4 +18,12 @@ export const navigation = [
       }
     ]
   }
-  ];
+  , {
+    text: 'DataTable',
+    path: '/data-table',
+    icon: 'home'
+  }, {
+    text: 'EQ Ranking',
+    path: '/eqranking',
+    icon: 'home'
+  }];

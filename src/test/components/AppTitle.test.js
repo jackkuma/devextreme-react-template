@@ -32,8 +32,15 @@ test('renders change button', () => {
     expect(appComponent.length).toBe(1);
 });
 
-test('renders change button', () => {
-    const wrapper = setup();
-    const button = findByTestAttr(wrapper, 'change-button');
-    expect(button.length).toBe(1);
+// test('renders change button', () => {
+//     const wrapper = setup();
+//     const button = findByTestAttr(wrapper, 'change-button');
+//     expect(button.length).toBe(1);
+// });
+
+test('isShow state', () => {
+  const wrapper = shallow(<AppTitle className='show' className='hide' />);
+  expect(wrapper.find('.show').toBeTruthy();
+  wrapper.simulate('click');
+  expect(wrapper.find('.hide').toBeTruthy();
 });
