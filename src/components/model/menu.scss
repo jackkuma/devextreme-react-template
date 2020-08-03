@@ -1,0 +1,20 @@
+.menu-penal {
+    background-color: #333;
+    position: absolute;
+    padding: 10px;
+    width: 200px;
+    height: 80px;
+    top: 76px;
+    left: 300px;
+    z-index: 2000;
+    a {
+        color:#fff;
+        padding: 10px;
+    }
+    &.isOpen {
+        left: 250px;
+    }
+    &.isClose {
+        left: 76px;
+    }
+}
