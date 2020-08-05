@@ -9,10 +9,32 @@
   width: 250px !important;
 
   .menu-container {
+    background-color: #38303f;
     min-height: 100%;
     display: flex;
+    flex-direction: column;
     flex: 1;
 
+    .date-time-container {
+      display: block;
+      border-bottom: 2px solid rgba(0,0,0, 0.3);
+      width: 100%;
+      padding: 16px;
+      padding-bottom: 1.5em;
+    }
+    .select-container {
+      display: block;
+      border-top: 1px solid rgba(255,255,255, 0.1);
+      width: 100%;
+      padding: 16px;
+      padding-top: 1.25em;
+    }
+    h6 {
+      color: #f3f3f3;
+      font-size: 1.2em;
+      margin-top: 0.3em;
+      margin-bottom: 0.5em;
+    }
     .dx-treeview {
       // ## Long text positioning
       white-space: nowrap;
