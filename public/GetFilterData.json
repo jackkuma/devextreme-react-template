@@ -6,7 +6,7 @@
         "By Week",
         "By Month"
     ],
-    "eqpType": [
+    "Type": [
         "HI"
     ],
     "site": [
@@ -15,14 +15,14 @@
         "P1",
         "P2"
     ],
-    "eqpModel": [
+    "Model": [
         "-",
         "All",
         "T12345",
         "T6789",
         "V12356"
     ],
-    "eqpId": [
+    "Id": [
         "-",
         "All",
         "HI-01",
