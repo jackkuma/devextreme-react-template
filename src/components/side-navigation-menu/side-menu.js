@@ -1,6 +1,6 @@
 import React, { useRef, useCallback } from 'react';
-import DateTime from '../date-time/date-time';
-import SelectItem from '../select/select';
+import FormItem from '../form/form-item';
+
 import './side-navigation-menu.scss';
 
 import * as events from 'devextreme/events';
@@ -30,23 +30,7 @@ export default function (props) {
       ref={getWrapperRef}
     >
       {children}
-      <div className={'menu-container'}>
-          <div className={'date-time-container'}>
-              <div className={'start-date'}>
-                  <h6>Start:</h6>
-                  <DateTime />
-              </div>
-              <div className={'end-date'}>
-                  <h6>End:</h6>
-                  <DateTime />
-              </div>
-          </div>
-          <div className={'select-container'}>
-                <h6>Start:</h6>
-                <SelectItem />
-                <h6>End:</h6>
-          </div>
-      </div>
+      <FormItem />
     </div>
   );
 }
