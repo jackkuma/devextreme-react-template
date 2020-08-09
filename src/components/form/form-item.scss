@@ -1,0 +1,37 @@
+@import "../../themes/generated/variables.additional.scss";
+
+.dx-field-datetime {
+    width: 100%;
+    padding: 8px;
+    .dx-texteditor-input-container {
+        >input {
+            border-radius: 0;
+            background-color: #E2E5E7 !important;
+            padding: 5px !important;
+            
+            .dx-placeholder {
+                color: #f7f7f7;
+            }
+        }
+    }
+}
+
+.dx-field-select {
+    width: 100%;
+    padding: 8px;
+    .dx-texteditor-input-container {
+        >input {
+            border-radius: 0;
+            background-color: #E2E5E7 !important;
+            padding: 5px !important;
+            
+            .dx-placeholder {
+                color: #f7f7f7;
+            }
+        }
+    }
+}
+
+.current-value {
+    color: #00ff00
+}
