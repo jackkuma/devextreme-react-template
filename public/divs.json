@@ -1,0 +1,34 @@
+{
+    "status": true,
+    "message": "success",
+    "divBlock": [
+        {
+            "id": 1,
+            "pageName": "Eng11",
+            "divName": "chart01",
+            "divType": "chart-3",
+            "divHeight": "h-350"
+        },
+        {
+            "id": 2,
+            "pageName": "Eng12",
+            "divName": "chart02",
+            "divType": "chart-3",
+            "divHeight": "h-350"
+        },
+        {
+            "id": 3,
+            "pageName": "Eng13",
+            "divName": "chart03",
+            "divType": "chart-3",
+            "divHeight": "h-350"
+        },
+        {
+            "id": 4,
+            "pageName": "Eng21",
+            "divName": "chart04",
+            "divType": "line-chart",
+            "divHeight": "h-500"
+        }
+    ]
+}
