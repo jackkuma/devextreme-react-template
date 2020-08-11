@@ -63,7 +63,7 @@ export default function ({ title, children }) {
     <div className={'side-nav-inner-toolbar'}>
       <Drawer
         className={['drawer', patchCssClass].join(' ')}
-        position={'before'}
+        position="left"
         closeOnOutsideClick={onOutsideClick}
         openedStateMode={isLarge ? 'shrink' : 'overlap'}
         revealMode={isXSmall ? 'slide' : 'expand'}

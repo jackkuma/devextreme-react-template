@@ -1,0 +1,29 @@
+@import "../../themes/generated/variables.base.scss";
+
+#summaryPage {
+    background-color: rgba($base-accent, alpha($base-accent) * 0.45);
+    border-radius: 1em;
+    padding: 1.2em;
+    margin-bottom: 1em;
+    .title-container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        >h5 {
+            margin-top: 0.3em;
+            margin-bottom: 0.2em;
+            color: $base-text;
+        }
+    }
+
+    .text-block {
+        border-radius: 1em;
+        width: 65%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-size: 1.2em;
+        line-height: 1.5em;
+        letter-spacing: 1px;
+    }
+}

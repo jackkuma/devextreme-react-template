@@ -1,15 +1,33 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Fragment } from "react";
+import ChartDiv from './chart-div';
+
 import './display.scss';
 
+const divApi = './static/json/divs.json';
+
 export default class DisplayDiv extends Component {
-    render() {
-        const { pageName, divName, divType, divHeight } = this.props.data;
-        return (
-            <Fragment>
-                <div id={divName} className={divType}>
-                    <p>{pageName}</p>
-                </div>
-            </Fragment>
-        )
-    }
+  state = {
+    divBlocks: [],
+  };
+
+  componentDidMount() {
+    fetch(divApi)
+    .then(rs => rs.json())
+    .then(data => {
+      this.setState({
+        divBlocks: data.divBlock
+      });
+    });
+  }
+
+  render() {
+    const { divBlocks } = this.state;
+    return (
+        <Fragment>
+            {divBlocks.map((divBlock) => (
+              <ChartDiv key={divBlock.id} {...divBlock} />
+            ))}
+        </Fragment>
+    );
+  }
 }
