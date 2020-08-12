@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>React App</title>
+    <script src="https://spotfire-next.cloud.tibco.com/spotfire/js-api/loader.js"></script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+  <!-- <script>
+    let app;
+    let doc;
+    let webPlayerServerRootUrl = "https://spotfire-next.cloud.tibco.com/spotfire/wp/";
+    let analysisPath = "/Samples/Expense Analyzer Dashboard";
+    let parameters = '';
+    let reloadInstances = false;
+    let apiVersion = "7.14";
+
+    let customizationInfo = {
+      showAbout : false,
+      showAnalysisInformationTool : false,
+      showAuthor : false,
+      showCustomizableHeader : false,
+      showDodPanel : false,
+      showExportFile : false,
+      showExportVisualization : false,
+      showFilterPanel : false,
+      showHelp : false,
+      showLogout : false,
+      showPageNavigation : false,
+      showReloadAnalysis : false,
+      showStatusBar : false,
+      showToolBar : false,
+    }
+
+    spotfire.webPlayer.createApplication(
+        webPlayerServerRootUrl,
+        customizationInfo,
+        analysisPath,
+        parameters,
+        reloadInstances,
+        apiVersion,
+        onReadyCallback,
+        onCreateLoginElement 
+    );
+
+    function onReadyCallback(response, newApp) {
+        app = newApp;
+        if(response.status === "OK") {
+            //console.log("OK received. Opening document to page 0 in element renderAnalysis")
+            doc = app.openDocument("container", 0, customizationInfo);
+        } else {
+            console.log("Status not OK. " + response.status + ": " + response.message)
+        }
+    }
+ 
+    function onError(error) {
+        console.log("Error: " + error);
+    }
+ 
+    function onCreateLoginElement() {
+        console.log("Creating the login element");
+
+        // Optionally create and return a div to host the login button
+        return null;
+    }
+  </script> -->
+</html>
