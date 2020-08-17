@@ -1,4 +1,5 @@
 //Link https://community.tibco.com/wiki/how-set-filters-using-tibco-spotfirer-javascript-api
+//文獻資料 https://docs.spotfire.cloud.tibco.com/spotfire/GUID-267D5906-E8D4-4A73-9FC9-994716CD2FE1.html
 
 function SetAllValuesFilters() {
                     
