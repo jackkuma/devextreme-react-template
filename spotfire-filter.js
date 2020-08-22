@@ -1,3 +1,5 @@
+//ScrollTop https://stackoverflow.com/questions/4210798/how-to-scroll-to-top-of-page-with-javascript-jquery
+
 //button-Link https://community.tibco.com/questions/javascript-insert-font-style-url-not-working-internet-explorerwebplayer
 
 //Link https://community.tibco.com/wiki/how-set-filters-using-tibco-spotfirer-javascript-api
