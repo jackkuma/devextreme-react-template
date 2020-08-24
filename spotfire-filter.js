@@ -1,3 +1,6 @@
+//menu https://community.tibco.com/wiki/navigate-spotfire-pages-tabs-dropdown
+//https://spotfired.blogspot.com/2014/08/toggle-page-navigation.html
+
 //ScrollTop https://stackoverflow.com/questions/4210798/how-to-scroll-to-top-of-page-with-javascript-jquery
 
 //button-Link https://community.tibco.com/questions/javascript-insert-font-style-url-not-working-internet-explorerwebplayer
