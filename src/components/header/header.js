@@ -1,44 +1,36 @@
 import React from 'react';
 import Toolbar, { Item } from 'devextreme-react/toolbar';
 import Button from 'devextreme-react/button';
-import UserPanel from '../user-panel/user-panel';
-import './header.scss';
-import { Template } from 'devextreme-react/core/template';
+import MenuButton from '../model/ModelMenu';
 
-export default ({ menuToggleEnabled, title, toggleMenu, userMenuItems }) => (
+import './header.scss';
+
+function renderLabel() {
+  return <div className="toolbar-label"><b>Tom&apos;s Club</b> Products</div>;
+}
+
+export default ({ menuToggleEnabled, toggleMenu }) => (
   <header className={'header-component'}>
     <Toolbar className={'header-toolbar'}>
+      <Item location={'before'}>
+      </Item>
+      <Item
+       location={'before'}
+       widget={'dxButton'}
+      >
+        <MenuButton />
+      </Item>
+      <Item location="center"
+            locateInMenu="never"
+            render={renderLabel} />
       <Item
         visible={menuToggleEnabled}
-        location={'before'}
+        location={'after'}
         widget={'dxButton'}
         cssClass={'menu-button'}
       >
-        <Button icon="menu" stylingMode="text" onClick={toggleMenu} />
+        <Button icon="home" stylingMode="text" onClick={toggleMenu} />
       </Item>
-      <Item
-        location={'before'}
-        cssClass={'header-title'}
-        text={title}
-        visible={!!title}
-      />
-      <Item
-        location={'after'}
-        locateInMenu={'auto'}
-        menuItemTemplate={'userPanelTemplate'}
-      >
-        <Button
-          className={'user-button authorization'}
-          width={210}
-          height={'100%'}
-          stylingMode={'text'}
-        >
-          <UserPanel menuMode={'context'} />
-        </Button>
-      </Item>
-      <Template name={'userPanelTemplate'}>
-        <UserPanel menuMode={'list'} />
-      </Template>
     </Toolbar>
   </header>
 );
