@@ -1,20 +1,32 @@
 .menu-penal {
-    background-color: #333;
+    background-color: #eee;
+    border-radius: 6px;
     position: absolute;
     padding: 10px;
-    width: 200px;
-    height: 80px;
-    top: 76px;
-    left: 300px;
-    z-index: 2000;
-    a {
-        color:#fff;
-        padding: 10px;
+    top: 46px;
+    left: 5px;
+    z-index: 1000;
+    &::before {
+        border-color: transparent transparent #eee transparent;
+        border-style: solid solid solid solid;
+        border-width: 12px 8px 12px 8px;
+        content: '';
+        position: absolute;
+        width:0;
+        height: 0;
+        top: -24px;
     }
-    &.isOpen {
-        left: 250px;
+    &.menuShow {
+        box-shadow: 0 1px 8px rgba(0,0,0,.2);
+        width: 200px;
+        height: 300px;
+        opacity: 1;
+        transition: all .3s;
     }
-    &.isClose {
-        left: 76px;
+    &.menuHide {
+        width: 60px;
+        height: 100px;
+        opacity: 0;
+        transition: all .5s;
     }
 }

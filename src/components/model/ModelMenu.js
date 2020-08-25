@@ -1,17 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { createPortal } from 'react-dom';
+import React, { useState, Fragment } from 'react';
+import Button from 'devextreme-react/button';
 
 import './menu.scss';
 
-const MenuPanel = () => {
-    const menuLink = true;
-    return createPortal(
-        <div className="menu-penal">
-            {menuLink ? <a href="https://google.com" rel="remoteLink">Test 123</a> : <Link to="/profile">Test 456</Link>}
-        </div>,
-        document.getElementById('model'),
-    )
-}
+const MenuButton = () => {
+    const [detailVisible, setDetailVisible] = useState(false);
+    const toggleMenu = () => setDetailVisible(!detailVisible);
 
-export default MenuPanel;
+    return(
+        <Fragment>
+            <Button icon={detailVisible ? 'close' : 'menu'} stylingMode="text" onClick={toggleMenu} />
+            <div id="menuList" className={["menu-penal", detailVisible ? "menuShow" : "menuHide"].join(' ')} />
+        </Fragment>
+    );
+};
+
+export default MenuButton;
