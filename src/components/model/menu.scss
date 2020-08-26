@@ -40,6 +40,7 @@
         background-color: transparent;
         border: none;
         border-bottom: 1px dotted #c7c7c7;
+        box-shadow: 0 1px 6px rgba(0,0,0,.15);
         cursor: pointer;
         padding: 12px;
         width: 100%;
@@ -55,8 +56,13 @@
             border-bottom: none;
         }
         &:hover, &:focus {
-            background-color: #e6e6e6;
-            color: #be3131
+            background-color: #feffe9;
+            color: #be3131;
+            transition: all .5s;
+            >i {
+                float: right;
+                transition: all .5s;
+            }
         }
         >i {
             color: rgb(93, 99, 126);
