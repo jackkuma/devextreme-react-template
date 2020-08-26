@@ -1,13 +1,14 @@
 .menu-penal {
-    background-color: #eee;
+    background-color: #f7f7f7;
     border-radius: 6px;
+    color:#121212;
     position: absolute;
     padding: 10px;
     top: 46px;
     left: 5px;
     z-index: 1000;
     &::before {
-        border-color: transparent transparent #eee transparent;
+        border-color: transparent transparent #f7f7f7 transparent;
         border-style: solid solid solid solid;
         border-width: 12px 8px 12px 8px;
         content: '';
@@ -19,14 +20,41 @@
     &.menuShow {
         box-shadow: 0 1px 8px rgba(0,0,0,.2);
         width: 200px;
-        height: 300px;
+        height: 140px;
         opacity: 1;
         transition: all .3s;
     }
     &.menuHide {
         width: 60px;
-        height: 100px;
+        height: 80px;
         opacity: 0;
         transition: all .5s;
+    }
+    >button {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px dotted #c7c7c7;
+        cursor: pointer;
+        padding: 12px;
+        width: 100%;
+        text-align: left;
+        outline: none;
+        &:first-child {
+            border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+        }
+        &:last-child {
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            border-bottom: none;
+        }
+        &:hover, &:focus {
+            background-color: #e6e6e6;
+            color: #be3131
+        }
+        >i {
+            color: rgb(93, 99, 126);
+            margin-right: 5px;
+        }
     }
 }
