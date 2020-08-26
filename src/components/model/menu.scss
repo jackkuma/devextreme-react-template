@@ -23,12 +23,18 @@
         height: 140px;
         opacity: 1;
         transition: all .3s;
+        >button {
+            display: block;
+        }
     }
     &.menuHide {
         width: 60px;
         height: 80px;
         opacity: 0;
         transition: all .5s;
+        >button {
+            display: none;
+        }
     }
     >button {
         background-color: transparent;
