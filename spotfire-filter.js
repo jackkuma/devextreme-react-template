@@ -1,3 +1,5 @@
+//side-menu https://spotfired.blogspot.com/2017/12/slide-menu.html
+//DropdownList https://spotfired.blogspot.com/search?q=drop+down+list
 //menu https://community.tibco.com/wiki/navigate-spotfire-pages-tabs-dropdown
 //https://spotfired.blogspot.com/2014/08/toggle-page-navigation.html
 
