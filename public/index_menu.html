@@ -39,9 +39,6 @@
     var createControls = function() {
       var menuDiv = document.getElementById("menuList");
 
-      var pagesLabel = document.createElement("span");
-      pagesLabel.innerHTML = "Pages:";
-  
       var getActivePageButton = document.createElement("button");
       getActivePageButton.innerHTML = "Get active page";
       getActivePageButton.value = "Get active page";
@@ -52,10 +49,18 @@
           });
       };
 
-      menuDiv.appendChild(pagesLabel);
-      menuDiv.appendChild(document.createElement('br'));
+      var viewActivePageButton = document.createElement("button");
+      viewActivePageButton.innerHTML = "View active page";
+      viewActivePageButton.value = "View active page";
+      viewActivePageButton.onclick = function() {
+        doc.getActivePage(
+          function(page) {
+                log(dump(page, "spotfire.webplayer.Document.getActivePage", 2));
+          });
+      };
+
       menuDiv.appendChild(getActivePageButton);
-      menuDiv.appendChild(document.createElement('br'));
+      menuDiv.appendChild(viewActivePageButton);
     }
 
     var customizationInfo = {
