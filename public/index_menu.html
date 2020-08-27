@@ -51,10 +51,7 @@
       viewActivePageButton.innerHTML = "<i class='fas fa-paste'></i>View active page";
       viewActivePageButton.type = "button";
       viewActivePageButton.onclick = function() {
-        doc.getActivePage(
-          function(page) {
-                log(dump(page, "spotfire.webplayer.Document.getActivePage", 2));
-          });
+        openTest();
       };
 
       var testActivePage = document.createElement("button");
@@ -143,9 +140,15 @@
 
     function menuTest() {
       console.log('Change Start');
-      doc = app.openDocument("chart", 0);
-      $("#menuList").addClass("menuHide");
-      $("#menuList").removeClass("menuShow");
+      doc1 = app.openDocument("chart", 0);
+      window.changeComponentState({detailVisible: false});
+    }
+
+    function openTest() {
+      console.log('Open Start');
+      doc2 = app.openDocument("infoPage", 0);
+      window.changeComponentState({detailVisible: false});
+      window.changePageState({pageVisible: true});
     }
 
     function onCreateLoginElement() {
