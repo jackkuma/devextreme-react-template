@@ -42,17 +42,14 @@
 
       var getActivePageButton = document.createElement("button");
       getActivePageButton.innerHTML = "<i class='fas fa-file'></i>Get active page";
-      getActivePageButton.value = "Get active page";
+      getActivePageButton.type = "button";
       getActivePageButton.onclick = function() {
-        doc.getActivePage(
-          function(page) {
-                log(dump(page, "spotfire.webplayer.Document.getActivePage", 2));
-          });
+        menuTest();
       };
 
       var viewActivePageButton = document.createElement("button");
       viewActivePageButton.innerHTML = "<i class='fas fa-paste'></i>View active page";
-      viewActivePageButton.value = "View active page";
+      viewActivePageButton.type = "button";
       viewActivePageButton.onclick = function() {
         doc.getActivePage(
           function(page) {
@@ -62,7 +59,7 @@
 
       var testActivePage = document.createElement("button");
       testActivePage.innerHTML = "<i class='fas fa-file-alt'></i>Test active";
-      testActivePage.value = "View active page";
+      testActivePage.type = "button";
       testActivePage.onclick = function() {
         doc.getActivePage(
           function(page) {
@@ -146,6 +143,9 @@
 
     function menuTest() {
       console.log('Change Start');
+      doc = app.openDocument("chart", 0);
+      $("#menuList").addClass("menuHide");
+      $("#menuList").removeClass("menuShow");
     }
 
     function onCreateLoginElement() {
