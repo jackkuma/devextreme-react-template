@@ -1,0 +1,68 @@
+{
+    "Dev": [
+        {
+            "hostName": "http://usewebDev/",
+            "envPath": "webDev/",
+            "apItem": [
+                {
+                    "id": 1,
+                    "apName": "Australian academic",
+                    "className": "icon-Aus",
+                    "linkPath": "academic/"
+                },
+                {
+                    "id": 2,
+                    "apName": "brilliant Rose",
+                    "className": "icon-Rose",
+                    "linkPath": "brilliant/"
+                },
+                {
+                    "id": 3,
+                    "apName": "Nearly three billion",
+                    "className": "icon-Nearly",
+                    "linkPath": "billion/"
+                }
+            ]
+        }
+    ],
+    "Staging": [
+        {
+            "hostName": "http://usewebTest/",
+            "envPath": "webTest/",
+            "apItem": [
+                {
+                    "id": 1,
+                    "apName": "Australian academic",
+                    "className": "icon-Aus",
+                    "linkPath": "academic/"
+                },
+                {
+                    "id": 2,
+                    "apName": "brilliant Rose",
+                    "className": "icon-Rose",
+                    "linkPath": "brilliant/"
+                }
+            ]
+        }
+    ],
+    "Production": [
+        {
+            "hostName": "http://useWeb/",
+            "envPath": "webPro/",
+            "apItem": [
+                {
+                    "id": 1,
+                    "apName": "Australian academic",
+                    "className": "icon-Aus",
+                    "linkPath": "academic/"
+                },
+                {
+                    "id": 2,
+                    "apName": "Nearly three billion",
+                    "className": "icon-Nearly",
+                    "linkPath": "billion/"
+                }
+            ]
+        }
+    ]
+}
