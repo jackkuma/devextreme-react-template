@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://spotfire-next.cloud.tibco.com/spotfire/js-api/loader.js"></script>
+</head>
+<body>
+    <h1>Test URL</h1>
+    <div id="chart" style="height: 80vh;"></div>
+    <a href="/home">BACK</a>
+</body>
+<script>
+    let prvUrl = document.referrer;
+    //console.log(prvUrl);
+    let paraString = prvUrl.substring(prvUrl.indexOf("/")+1).split("/");
+    //console.log(paraString);
+    let nowEnv = paraString[2];
+    console.log(nowEnv);
+    if(nowEnv === "spotfireTool") {
+        envPath = "/Samples/Expense Analyzer Dashboard";
+    } else {
+        envPath = "/test/Expense Analyzer Dashboard";
+    }
+
+    var app;
+    var doc;
+    var webPlayerServerRootUrl = "https://spotfire-next.cloud.tibco.com/spotfire/wp/";
+    var customizationInfo;
+    //var analysisPath = "/Samples/Expense Analyzer Dashboard";
+    var analysisPath = envPath;
+    var parameters = '';
+    var reloadInstances = false;
+    var apiVersion = "7.14";
+
+    var customizationInfo = {
+      showAbout : false,
+      showAnalysisInformationTool : false,
+      showAuthor : false,
+      showClose : false,
+      showCustomizableHeader : false,
+      showDodPanel : false,
+      showExportFile : false,
+      showFilterPanel : true,
+      showHelp : false,
+      showLogout : false,
+      showPageNavigation : false,
+      showStatusBar : false,
+      showToolBar : false,
+      showUndoRedo : false
+    }
+ 
+    spotfire.webPlayer.createApplication(
+      webPlayerServerRootUrl,
+      customizationInfo,
+      analysisPath,
+      parameters,
+      reloadInstances,
+      apiVersion,
+      onReadyCallback,
+      onCreateLoginElement 
+    );
+ 
+    function onReadyCallback(response, newApp) {
+        app = newApp;
+        if(response.status === "OK") {
+            //console.log("OK received. Opening document to page 0 in element renderAnalysis")
+            doc = app.openDocument("chart", 0);
+        } else {
+            console.log("Status not OK. " + response.status + ": " + response.message)
+        }
+    }
+
+    function onCreateLoginElement() {
+        console.log("Creating the login element");
+        // Optionally create and return a div to host the login button
+        return null;
+    }
+</script>
+</html>
