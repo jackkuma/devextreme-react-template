@@ -1,0 +1,20 @@
+{
+    "envHost": "http://usewebTest/",
+    "envPath": "webTest/",
+    "apItem": [
+        {
+            "id": 1,
+            "className": "icon-Aus",
+            "apName": "Australian academic",
+            "linkPath": "academic/",
+            "remote": false
+        },
+        {
+            "id": 2,
+            "apName": "brilliant Rose",
+            "className": "icon-Rose",
+            "linkPath": "http://www.google.com.tw/",
+            "remote": true
+        }
+    ]
+}

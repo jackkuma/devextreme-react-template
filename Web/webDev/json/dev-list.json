@@ -1,0 +1,27 @@
+{
+    "envHost": "http://usewebDev/",
+    "envPath": "webDev/",
+    "apItem": [
+        {
+            "id": 1,
+            "apName": "Australian academic",
+            "className": "icon-Aus",
+            "linkPath": "academic/",
+            "remote": false
+        },
+        {
+            "id": 2,
+            "apName": "brilliant Rose",
+            "className": "icon-Rose",
+            "linkPath": "brilliant/",
+            "remote": false
+        },
+        {
+            "id": 3,
+            "apName": "Nearly three billion",
+            "className": "icon-Nearly",
+            "linkPath": "http://www.google.com.tw/",
+            "remote": true
+        } 
+    ]
+}

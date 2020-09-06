@@ -1,0 +1,20 @@
+{
+    "envHost": "http://useWeb/",
+    "envPath": "webPro/",
+    "apItem": [
+        {
+            "id": 1,
+            "apName": "Australian academic",
+            "className": "icon-Aus",
+            "linkPath": "http://www.google.com.tw/",
+            "remote": true
+        },
+        {
+            "id": 2,
+            "apName": "Nearly three billion",
+            "className": "icon-Nearly",
+            "linkPath": "billion/",
+            "remote": false
+        }
+    ]
+}
