@@ -8,13 +8,30 @@ class DateTime extends Component {
     super(props);
     // this.now = new Date();
     this.value = this.props.value;
+    //add check url
+    this.state = {
+      fromURL: ''
+    };
+
     this.onValueChanged = this.onValueChanged.bind(this);
   }
+
+  componentDidMount() {
+    let prvUrl = document.referrer;
+    //console.log(prvUrl);
+    let paraString = prvUrl.substring(prvUrl.indexOf("/")+1).split("/");
+    console.log(paraString);
+    let nowEnv = paraString[2];
+    console.log(nowEnv);
+    this.setState({fromURL: nowEnv});
+  }
+
   onValueChanged(e) {
     this.setState({
       value: e.value
     });
   }
+
   render() {
     return (
       <Fragment>
@@ -23,6 +40,7 @@ class DateTime extends Component {
               //  defaultValue={this.value} 
                type="datetime" 
               />
+              <p>{this.state.fromURL}</p>
             </div>
       </Fragment>
     );
