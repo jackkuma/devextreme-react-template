@@ -12,6 +12,7 @@
     <a href="javascript:;" onclick="document.getElementById('two').scrollIntoViewIfNeeded(false);">two</a>
     <a href="javascript:;" onclick="document.getElementById('three').scrollIntoView({ behavior: 'smooth' });">three</a>
     <a href="javascript:;" onclick="document.getElementById('three').scrollIntoViewIfNeeded(false);">three II</a>
+  <a href="point9.scrollIntoView(false)" class="point">Test</a>
     <a href="javascript:;" class="btn">four</a>
 </nav>
 <div id="one" style="background-color: aqua; height: 500px;"><h1>One Start</h1></div>
@@ -23,11 +24,13 @@
     </span>
 </div>
 <div class="four" style="background-color:darkgoldenrod; height: 1200px;" sf-vasion-id="666-888"><h1>Four Start</h1></div>
+    <div class="box_hide" id="point9">View</div>
 <script>
   //https://www.zhangxinxu.com/wordpress/2015/12/element-scroll-prevent-parent-element-scroll-js/
   //https://allyjs.io/tests/browser-bugs/gecko-scroll-behavior-scrollintoview.html
     //https://www.itread01.com/content/1542724273.html
     //alert("word:" + $('div[sf-vasion-id=000-555-888] > span > span').text());
+    $("#cao")[0].scrollIntoView();
     console.log("word:" + $('div[sf-vasion-id=000-555-888] > span > span').text());
 
     let btn = document.querySelector('.btn');
@@ -36,6 +39,16 @@
     btn.addEventListener('click', function () {
         el.scrollIntoView(true, { behavior: 'smooth' });
     });
+  
+  $(".point").each(function(e){
+    $(this).click(function(){
+      document.getElementById("point"+e).scrollIntoView(false);
+      $("#point"+e).toggle();
+      $("#point"+e).siblings(".box_hide").hide();
+      $(this).css("color","#EC7302");
+      //alert(e);
+    });
+  })
 </script>
 </body>
 </html>
