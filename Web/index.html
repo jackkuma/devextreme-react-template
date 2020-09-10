@@ -48,6 +48,29 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script src="js/homeMenu.js"></script>
   <script>
+    function GetRequest() {
+        let queryUrl = window.location.href;
+        let getRequest = new Object;
+
+        if (queryUrl.indexOf("?") != -1) {
+            var str = queryUrl.substr(1);
+            strs = str.split("&")
+            data = strs[1].replace("(","");
+            data2 = data.replace(")","");
+            console.log(data2);
+            let getStr = new Array();
+            getStr = data2.split(",");
+
+            for (var i = 0; i < getStr.length; i++) {
+                getRequest[getStr[i].split("=")[0]] = unescape(getStr[i].split("=")[1]);
+            }
+        }
+        console.log(getRequest.testid);
+        console.log(getRequest.testStr);
+    }
+
+    GetRequest();
+    
     $(document).ready(function(){
       $('.model-home').hide();
       $('.nav-panel').hide();
