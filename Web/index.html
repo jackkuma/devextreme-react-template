@@ -48,6 +48,65 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <script src="js/homeMenu.js"></script>
   <script>
+    const strUrl = location.search;
+    let getPara
+    let ParaVal;
+    let aryPara = [];
+    
+
+  if (strUrl.indexOf("?") != -1) {
+    let getSearch = strUrl.split("?");
+    getPara = getSearch[1].split("&");
+    data = getPara[1].replace("(","");
+    data2 = data.replace(")","");
+    let getStr = new Array();
+    getStr = data2.split(",");
+    
+    for(i=0; i<=getStr.length-1; i++) {
+      //如果資料名稱為productName的話那就把他取出來
+      if(getStr[i].split("=")[0] === "productName"){
+        productName = getStr[i].split("=")[1];
+        aryPara.push(productName);
+        console.log(aryPara)
+      }
+    }
+    // for (let i = 0; i < getStr.length; i++) {
+    //   ParaVal = getStr[i].split("=");
+    //   console.log(ParaVal);
+    //   // aryPara.push(ParaVal[0]);
+    //   // aryPara[ParaVal[0]] = ParaVal[1];
+    // }
+  }
+
+  // let productName = [];
+  // let testString = [];
+    // function GetRequest() {
+    //   let queryUrl = window.location.href;
+    //   let getRequest = new Object;
+
+    //     if (queryUrl.indexOf("?") != -1) {
+    //         var str = queryUrl.substr(1);
+    //         strs = str.split("&")
+    //         data = strs[1].replace("(","");
+    //         data2 = data.replace(")","");
+    //         console.log(data2);
+    //         let getStr = new Array();
+    //         getStr = data2.split(",");
+    //         for (var i = 0; i < getStr.length; i++) {
+    //             getRequest[getStr[i].split("=")[0]] = unescape(getStr[i].split("=")[1]);
+    //             console.log(getRequest[i]);
+    //             //productName.push("Kiwi");
+    //         }
+    //         // let productName = getRequest.productName;
+    //         // let testString = getRequest.testString;
+
+    //         //     console.log(productName);
+    //         //     console.log(testString);
+    //     }
+    // }
+
+    // GetRequest();
+    
     function GetRequest() {
         let queryUrl = window.location.href;
         let getRequest = new Object;
