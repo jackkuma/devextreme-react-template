@@ -52,6 +52,7 @@
     let getPara
     let ParaVal;
     let aryPara = [];
+    let aryStr = [];
     
 
   if (strUrl.indexOf("?") != -1) {
@@ -67,9 +68,18 @@
       if(getStr[i].split("=")[0] === "productName"){
         productName = getStr[i].split("=")[1];
         aryPara.push(productName);
-        console.log(aryPara)
+      }
+      //如果資料名稱為testString的話那就把他取出來
+      if(getStr[i].split("=")[0] === "testString"){
+        testString = getStr[i].split("=")[1];
+        aryStr.push(testString);
       }
     }
+    // console.log(aryStr)
+    // console.log(aryPara)
+    sendProductName();
+    // sendTestString();
+    // sendValue();
     // for (let i = 0; i < getStr.length; i++) {
     //   ParaVal = getStr[i].split("=");
     //   console.log(ParaVal);
@@ -77,6 +87,28 @@
     //   // aryPara[ParaVal[0]] = ParaVal[1];
     // }
   }
+
+  // function sendValue() {
+  //   for(i=0; i < aryPara.length; i++) {
+  //     for(j=0; j < aryStr.length; j++) {
+  //       setTimeout(function(){
+  //         console.log('送出了 productName：' + aryPara[i] + ' testString：' + aryStr[j]);
+  //       }, 1000);
+  //     }
+  //   }
+  // }
+
+  function sendProductName() {
+      for(i=0; i < aryPara.length; i++) {
+        console.log('送出了：' + aryPara[i]);
+      }
+  }
+
+  // function sendTestString() {
+  //     for(i=0; i < aryStr.length; i++) {
+  //       console.log('送出了：' + aryStr[i]);
+  //     }
+  // }
 
   // let productName = [];
   // let testString = [];
@@ -106,30 +138,7 @@
     // }
 
     // GetRequest();
-    
-    function GetRequest() {
-        let queryUrl = window.location.href;
-        let getRequest = new Object;
 
-        if (queryUrl.indexOf("?") != -1) {
-            var str = queryUrl.substr(1);
-            strs = str.split("&")
-            data = strs[1].replace("(","");
-            data2 = data.replace(")","");
-            console.log(data2);
-            let getStr = new Array();
-            getStr = data2.split(",");
-
-            for (var i = 0; i < getStr.length; i++) {
-                getRequest[getStr[i].split("=")[0]] = unescape(getStr[i].split("=")[1]);
-            }
-        }
-        console.log(getRequest.testid);
-        console.log(getRequest.testStr);
-    }
-
-    GetRequest();
-    
     $(document).ready(function(){
       $('.model-home').hide();
       $('.nav-panel').hide();
