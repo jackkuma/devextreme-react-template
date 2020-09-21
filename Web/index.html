@@ -103,9 +103,15 @@
   // }
 
   function sendProductName() {
-      for(i=0; i < aryPara.length; i++) {
+    for (let i = 0; i < aryPara.length; i++) {
+      let aryNum = i;
+      setTimeout(function() {
         console.log('送出了：' + aryPara[i]);
-      }
+      }, 1000 * (i + 1));
+    }
+      // for(let i=0; i < aryPara.length; i++) {
+      //   console.log('送出了：' + aryPara[i]);
+      // }
   }
 
   // function sendTestString() {
