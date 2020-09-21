@@ -1,7 +1,7 @@
+https://stackoverflow.com/questions/6165472/custom-css-scrollbar-for-firefox/54101063#54101063
+
+https://jqueryui.com/slider/#range
+
 http://www.myarvy.com/spotfire/tibco-spotfire-custom-fancy-filter-panel/
 
 https://community.tibco.com/wiki/how-create-attractive-filter-panels-customized-accordions
-
-http://www.htmleaf.com/
-
-http://www.htmleaf.com/jQuery/Form/201506091998.html
