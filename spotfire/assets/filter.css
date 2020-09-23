@@ -1,9 +1,9 @@
 :root {
-	--primary-color: #2196f3;
-    --secondary-color: #b2d7f5;
-    --text: #fff;
-    --bg-color: #30383f;
-    --border-color: #C6C8CC;
+  --primary-color: #2196f3;
+  --secondary-color: #b2d7f5;
+  --text: #fff;
+  --bg-color: #30383f;
+  --border-color: #C6C8CC;
 }
 .filter {
     color: #fff;
@@ -13,66 +13,36 @@
     padding: 10px;
     background-color: var(--bg-color);
 }
-.sf-inputSelect {
-    top: 0px;
-    left: 0px;
-    padding-left: 0px;
-    height: 156px;
-    width: 180px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    outline: none;
-}
-.filter-title {
-    color: #c9c9c9;
-    width: 90%;
-}
-.filter-content {
-    height: 135px;
-    width: 100%;
-}
-.SearchInput {
-    width: 180px;
-    border-radius: 3px;
-}
-.ListContainer{
-    border:1px solid var(--border-color);
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-.sfc-style-root .sf-element-scroll-bar {
-    border-style: Solid;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-    border-top-width: 1px;
-    border-right-width: 1px;
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    background-color: #F8F8F8;
-    border-top-color: #C6C8CC;
-    border-right-color: #C6C8CC;
-    border-bottom-color: #C6C8CC;
-    border-left-color: #C6C8CC;
-}
-sfc-style-root .sf-element-scroll-bar-button:hover {
-    color: #A6A9AE;
-}
-.sfc-style-root .sf-element-scroll-bar-button {
-    color: #D8D9DC;
-    background-color: #F8F8F8;
-    border-style: Solid;
-    border-top-color: #C6C8CC;
-    border-right-color: #C6C8CC;
-    border-bottom-color: #C6C8CC;
-    border-left-color: #C6C8CC;
-}
-.sf-element-scroll-bar-button {
-    position: absolute;
-    cursor: pointer;
-}
 
+/* List Box */
+.selectPanel, #sel2  {
+  width: 160px;
+}
+.list-box {
+  border: none;
+  border-radius: 0;
+  color: #121212;
+  padding: 0;
+  margin: 2px 0;
+  outline: none;
+  
+  min-height: 85px;
+}
+.list-box option {
+  border-left: 3px solid transparent;
+  background: #fff !important;
+  font-size: .8em;
+  padding: 0;
+  text-indent: 3px;
+}
+.list-box option.selected, 
+#sel2 option:checked {
+  border-left: 3px solid transparent;
+  border-left-color: var(--primary-color);
+  background: rgba(82, 151, 255,.3) !important;
+  background-color: rgba(82, 151, 255,.3) !important;
+  color: #121212; !important;
+}
 /* Radio Style */
   /* a {
     text-decoration: none;
@@ -179,7 +149,7 @@ sfc-style-root .sf-element-scroll-bar-button:hover {
 .card ul {
 	list-style-type: none;
 	padding-left: 50px;
-	margin: 0;
+	margin: 100px 0;
 }
 .card ul li {
 	display: block;
