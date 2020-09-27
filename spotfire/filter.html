@@ -4,15 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script type="text/javascript">var secureCookies = true;</script>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-<script src="./assets/flatpickr.min.js"></script>  
+<script src="./assets/flatpickr.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="./assets/Spotfire.Dxp.Web.Resources.App_Data.Styles.WebView.css">
-<link rel="stylesheet" type="text/css" href="./assets/flatpickr.min.css">
+<link rel="stylesheet" href="./assets/flatpickr.min.css">
 <link rel="stylesheet" type="text/css" href="./assets/filter.css">
 <script>
     $(function() {
+      let dt = new Date();
+      let endDate = dt.toLocaleString();
+      //console.log(endDate);
+      dt.setMonth(dt.getMonth()-6);
+      let startDate = dt.toLocaleString();
+      //console.log(startDate);
+
+      $(".startTime").flatpickr({
+        altInput: true,
+        altFormat: 'Y/m/d',
+        dateFormat: 'Y/m/d',
+        defaultDate: startDate
+      });
+      $(".endTime").flatpickr({
+        dateFormat: 'Y/m/d',
+        defaultDate: endDate,
+        maxDate: endDate
+      });
+
       $("#slider-range").slider({
         range: true,
         min: 0,
@@ -25,122 +45,75 @@
 
       $("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
 
-      $(".dateIcon").flatpickr();
-      $(".flatpickr").flatpickr();
     });
 </script>
 </head>
 <body>
     <div class="filter">
-        
-        <div class="sf-element sf-element-filter sf-focusable" tabindex="0" style="top: 20px; left: 0px; padding-left: 0px; height: 55px; width: 215px; outline: none;">
-            <span class="sf-element-filter-content sf-element-filter-title" title="Order datetime" style="width: 195px;">Order datetime</span>
-            <div class="sf-element-progress-animation" style="position: absolute; right: 25px; top: 3px; height: 12px; width: 12px; background: transparent; display: none;">
-                <div class="sf-element" style="height: 100%;">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 70 70" enable-background="new 0 0 70 70" xml:space="preserve">
-                        <g fill="currentColor">
-                            <circle class="sf-svg-loader-anim" cx="34.5" cy="7.5" r="6.5"></circle>
-                            <circle class="sf-svg-loader-anim" cx="55.5" cy="15.5" r="6.5"></circle>
-                            <circle class="sf-svg-loader-anim" cx="62.5" cy="35.5" r="6.5"></circle>
-                            <circle class="sf-svg-loader-anim" cx="55.5" cy="55.5" r="6.5"></circle>
-                            <circle class="sf-svg-loader-anim" cx="34.5" cy="62.5" r="6.5"></circle>
-                            <circle class="sf-svg-loader-anim" cx="14.5" cy="55.5" r="6.5"></circle>
-                            <circle class="sf-svg-loader-anim" cx="7.5" cy="35.5" r="6.5"></circle>
-                            <circle class="sf-svg-loader-anim" cx="14.5" cy="15.5" r="6.5"></circle>
-                        </g>
+        <div class="sf-element-filter" style="height: 125px; width: 175px; outline: none;">
+            <h6>Order datetime</h6>
+            <div class="RangeSlider">
+              <div class="LeftAligned">
+                <div class="startTime" data-wrap="true">
+                  <span class="input-btn date-icon" data-toggle>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" enable-background="new 0 0 14 14" xml:space="preserve">
+                      <g id="Lager_6" shape-rendering="crispEdges" fill="currentColor">
+                          <g><g><rect y="4" width="1" height="7"></rect></g></g>
+                          <g><g><rect x="12" y="4" width="1" height="7"></rect></g></g>
+                          <g><g><rect y="2" width="3" height="2"></rect></g></g>
+                          <g><g><rect x="4" y="2" width="5" height="2"></rect></g></g>
+                          <g><g><rect x="3" y="5" width="1" height="2"></rect></g></g>
+                          <g><g><rect x="6" y="5" width="1" height="2"></rect></g></g>
+                          <g><g><rect x="9" y="5" width="1" height="2"></rect></g></g>
+                          <g><g><rect x="9" y="8" width="1" height="2"></rect></g></g>
+                          <g><g><rect x="6" y="8" width="1" height="2"></rect></g></g>
+                          <g><g><rect x="3" y="8" width="1" height="2"></rect></g></g>
+                          <g><g><rect x="10" y="2" width="3" height="2"></rect></g></g>
+                          <g><g><rect x="1" y="7" width="11" height="1"></rect></g></g>
+                          <g><g><rect x="1" y="4" width="11" height="1"></rect></g></g>
+                          <g><g><rect x="1" y="10" width="11" height="1"></rect></g></g>
+                      </g>
+                      <g id="Lager_5" shape-rendering="crispEdges">
+                          <g><g><rect x="7" y="8" fill="#3D9DD7" width="2" height="2"></rect></g></g>
+                      </g>
                     </svg>
+                  </span>
+                  <input type="text" class="startDate" data-input />
                 </div>
-            </div>
-            <div class="ContextButton" title="Filter options"></div>
-            <span class="sf-element-filter-content" id="af6fbfc6-63c9-4543-8041-411623ab9535" style="height: 34px; width: 195px;">
-                <div class="RangeSlider sf-element sf-element-range-slider" style="width: 195px;">
-                    <div class="Feedback">
-                        <div class="LeftAligned EditableLabel" style="width: 96px;">
-                            <div class="sf-element-icon" style="float: left; margin-right: 2px;">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" enable-background="new 0 0 14 14" xml:space="preserve">
-                                    <g id="Lager_6" shape-rendering="crispEdges" fill="currentColor">
-                                        <g><g><rect y="4" width="1" height="7"></rect></g></g>
-                                        <g><g><rect x="12" y="4" width="1" height="7"></rect></g></g>
-                                        <g><g><rect y="2" width="3" height="2"></rect></g></g>
-                                        <g><g><rect x="4" y="2" width="5" height="2"></rect></g></g>
-                                        <g><g><rect x="3" y="5" width="1" height="2"></rect></g></g>
-                                        <g><g><rect x="6" y="5" width="1" height="2"></rect></g></g>
-                                        <g><g><rect x="9" y="5" width="1" height="2"></rect></g></g>
-                                        <g><g><rect x="9" y="8" width="1" height="2"></rect></g></g>
-                                        <g><g><rect x="6" y="8" width="1" height="2"></rect></g></g>
-                                        <g><g><rect x="3" y="8" width="1" height="2"></rect></g></g>
-                                        <g><g><rect x="10" y="2" width="3" height="2"></rect></g></g>
-                                        <g><g><rect x="1" y="7" width="11" height="1"></rect></g></g>
-                                        <g><g><rect x="1" y="4" width="11" height="1"></rect></g></g>
-                                        <g><g><rect x="1" y="10" width="11" height="1"></rect></g></g>
-                                    </g>
-                                    <g id="Lager_5" shape-rendering="crispEdges">
-                                        <g><g><rect x="7" y="8" fill="#3D9DD7" width="2" height="2"></rect></g></g>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="sf-element-text-box ValueLabel" title="2005/1/1 上午 12:11:26" style="float: left; text-align: left; width: 70px; height: 15px;">2005/1/1 上午 12:11:26</div>
-                        </div>
-                        <div class="RightAligned EditableLabel" style="width: 96px;">
-                            <div class="sf-element-icon" style="float: right; margin-left: 2px;">
-                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" enable-background="new 0 0 14 14" xml:space="preserve">
-                                    <g id="Lager_6" shape-rendering="crispEdges" fill="currentColor">
-                                        <g><g><rect y="4" width="1" height="7"></rect></g></g>
-                                        <g><g><rect x="12" y="4" width="1" height="7"></rect></g></g>
-                                        <g><g><rect y="2" width="3" height="2"></rect></g></g>
-                                        <g><g><rect x="4" y="2" width="5" height="2"></rect></g></g>
-                                        <g><g><rect x="3" y="5" width="1" height="2"></rect></g></g>
-                                        <g><g><rect x="6" y="5" width="1" height="2"></rect></g></g>
-                                        <g><g><rect x="9" y="5" width="1" height="2"></rect></g></g>
-                                        <g><g><rect x="9" y="8" width="1" height="2"></rect></g></g>
-                                        <g><g><rect x="6" y="8" width="1" height="2"></rect></g></g>
-                                        <g><g><rect x="3" y="8" width="1" height="2"></rect></g></g>
-                                        <g><g><rect x="10" y="2" width="3" height="2"></rect></g></g>
-                                        <g><g><rect x="1" y="7" width="11" height="1"></rect></g></g>
-                                        <g><g><rect x="1" y="4" width="11" height="1"></rect></g></g>
-                                        <g><g><rect x="1" y="10" width="11" height="1"></rect></g></g>
-                                    </g>
-                                    <g id="Lager_5" shape-rendering="crispEdges">
-                                        <g><g><rect x="7" y="8" fill="#3D9DD7" width="2" height="2"></rect></g></g>
-                                    </g>
-                                </svg>
-                            </div>
-                            <div class="sf-element-text-box ValueLabel" title="2010/12/31 下午 11:25:28" style="float: right; text-align: right; width: 70px; height: 15px;">2010/12/31 下午 11:25:28</div>
-                        </div>
-                    </div>
-                    <div class="BackgroundContainer" draggable="false">
-                        <div class="OuterRange Range sf-element sf-element-range sfc-outer" style="width: 195px;"></div>
-                        <div class="MiddleHandle Range sf-element sf-element-range sfc-inner-dimmed TouchTarget" style="left: 14px; width: 167px;"></div>
-                        <div class="InnerRange Range sf-element sf-element-range sfc-inner TouchTarget" sf-busy="false" style="left: 14px; width: 167px;"></div>
-                        <div class="Dots" style="visibility: hidden; display: none; width: 18px; left: 14px;"></div>
-                        <div class="Dots" style="visibility: hidden; display: none; width: 18px; left: 163px;"></div>
-                        <div class="Handle sf-element sf-element-thumb TouchTarget" style="left: 181px;"></div>
-                        <div class="Handle sf-element sf-element-thumb TouchTarget" style="left: 0px;"></div>
-                    </div>
-                    <label title="Include empty values" style="display: none; padding-top: 2px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-                        <div style="display: inline-block; vertical-align: top;">
-                            <input type="checkbox" style="outline: none; margin-right: 3px; position: absolute; opacity: 0;">
-                            <div class="StyledInput StyledCheckbox sf-element-check-box" style="width: 11px; height: 11px; border-width: 1px;">
-                                <svg width="11px" height="11px">
-                                    <path d="M7.608,2l-2.522,4.835l-2.331,-1.835l-0.755,1.234l3.478,2.766l3.522,-6.124z" fill="currentColor" stroke-width="1" transform="scale(1,1)" class="CheckboxButtonSvg"></path>
-                                    <rect x="2" y="5" height="1.5" width="7" fill="currentColor" stroke-width="1" transform="scale(1,1)" class="IndeterminateCheckboxButtonSvg"></rect>
-                                </svg>
-                            </div>
-                        </div>
-                        <span style="position: relative; vertical-align: top; top: 1px;">Include empty values</span>
-                    </label>
+              </div>
+              <div class="RightAligned">
+                <div class="endTime" data-wrap="true">
+                  <input type="text" class="endDate" data-input />
+                  <span class="input-btn date-icon" data-toggle>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 14 14" enable-background="new 0 0 14 14" xml:space="preserve">
+                      <g id="Lager_6" shape-rendering="crispEdges" fill="currentColor">
+                          <g><g><rect y="4" width="1" height="7"></rect></g></g>
+                          <g><g><rect x="12" y="4" width="1" height="7"></rect></g></g>
+                          <g><g><rect y="2" width="3" height="2"></rect></g></g>
+                          <g><g><rect x="4" y="2" width="5" height="2"></rect></g></g>
+                          <g><g><rect x="3" y="5" width="1" height="2"></rect></g></g>
+                          <g><g><rect x="6" y="5" width="1" height="2"></rect></g></g>
+                          <g><g><rect x="9" y="5" width="1" height="2"></rect></g></g>
+                          <g><g><rect x="9" y="8" width="1" height="2"></rect></g></g>
+                          <g><g><rect x="6" y="8" width="1" height="2"></rect></g></g>
+                          <g><g><rect x="3" y="8" width="1" height="2"></rect></g></g>
+                          <g><g><rect x="10" y="2" width="3" height="2"></rect></g></g>
+                          <g><g><rect x="1" y="7" width="11" height="1"></rect></g></g>
+                          <g><g><rect x="1" y="4" width="11" height="1"></rect></g></g>
+                          <g><g><rect x="1" y="10" width="11" height="1"></rect></g></g>
+                      </g>
+                      <g id="Lager_5" shape-rendering="crispEdges">
+                          <g><g><rect x="7" y="8" fill="#3D9DD7" width="2" height="2"></rect></g></g>
+                      </g>
+                    </svg>
+                  </span>
                 </div>
-                <div style="height: 34px; display: none;"></div>
-            </span>
-            <input class="flatpickr" data-min-date="today">
-            <div class="input-daterange input-group" id="datepicker">
-                <input type="text" class="input-sm form-control" name="start" />
-                <span class="input-group-addon">to</span>
-                <input type="text" class="input-sm form-control" name="end" />
+              </div>
             </div>
-            <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
             <div id="slider-range"></div>
+            <input type="text" id="amount" readonly style="border:0; color:#f6931f; margin: 10px 0;">
         </div>
+
       
     <div class="card">
         <ul>
