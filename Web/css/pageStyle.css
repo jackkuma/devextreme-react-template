@@ -1,0 +1,41 @@
+html, body {
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: 0;
+}
+div {
+    background-color: #fff;
+    position: absolute;
+    width: 94%;
+    padding: 10px;
+    left: 2%;
+}
+.summary {
+    background-color: #67b8dd;
+    border-radius: 16px;
+    padding: 10px;
+}
+.summary section {
+    background-color: #fff;
+    border-radius: 12px;
+    width: 97%;
+    padding: 20px 20px 0;
+    margin: 26px auto 0;
+}
+h3 {
+    margin: 10px;
+}
+.item {
+    background-color: #ccc;
+    height: 20px;
+}
+.pieChart {
+    background-color: #ff5858;
+    border-radius: 16px;
+    height: 250px;
+}
+.barChart {
+    background-color: #a96feb;
+    border-radius: 16px;
+    height: 250px;
+}
