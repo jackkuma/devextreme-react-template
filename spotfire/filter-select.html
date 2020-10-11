@@ -8,44 +8,145 @@
 <link rel="stylesheet" type="text/css" href="./assets/filter.css">
 </head>
 <body>
-<div class="filter">
+<div class="filter closePanel">
     <input id="nowVal" type="hidden" name="nowVal" value="">
-    <label for="sel2">Mutiple select</label>
     <div class="list-box">
-            <ul id="sel2">
-                <li value="AB123" class="selected">1</li>
-                <li value="AB456">2</li>
-                <li value="AB789">3</li>
-                <li value="CD321">4</li>
-                <li value="CD654">5</li>
-                <li value="CD987">6</li>
-                <li value="BB123">7</li>
-                <li value="BA456">8</li>
-                <li value="BD789">9</li>
-                <li value="CB321">10</li>
-                <li value="CA654">11</li>
+        <i>S</i>
+        <div class="filder">
+            <h3>Product<span class="warnMsg"></span></h3>
+            <ul id="selectProduct">
+                <li value="AB123">AB123</li>
+                <li value="AB456">AB456</li>
+                <li value="AB789">AB789</li>
+                <li value="CD321">CD321</li>
+                <li value="CD654">CD654</li>
+                <li value="CD987">CD987</li>
+                <li value="BB123">BB123</li>
+                <li value="BA456">BA456</li>
+                <li value="BD789">BD789</li>
+                <li value="CB321">CB321</li>
+                <li value="CA654">CA654</li>
             </ul>
+        </div>
     </div>
-    <button type="button" onclick="sendVal();">Send</button>
+    <div class="list-box">
+        <i>D</i>
+        <div class="filder">
+            <h3>Lot</h3>
+            <ul id="selectLot">
+                <li value="AB123">AB123</li>
+                <li value="AB456">AB456</li>
+                <li value="AB789">AB789</li>
+                <li value="CD321">CD321</li>
+                <li value="CD654">CD654</li>
+                <li value="CD987">CD987</li>
+                <li value="BB123">BB123</li>
+                <li value="BA456">BA456</li>
+                <li value="BD789">BD789</li>
+                <li value="CB321">CB321</li>
+                <li value="CA654">CA654</li>
+            </ul>
+        </div>
+    </div>
+    <div class='btn-content'>
+        <span id="productName"></span>
+        <span id="productCount">0</span>
+        <span id="lotName"></span>
+        <span id="lotCount">0</span>
+        <div id="queryMsg">Empty</div>
+        <button id="queryButton" type="button">Send</button>
+    </div>
 </div>
 <script>
     let selectVal = '';
+    let productCount = 0;
+    let lotCount = 0;
+    let msg = '';
+    //$('#queryMsg').hide();
+    $('.warnMsg').hide();
+    $('#queryMsg').animate({opacity: 0});
 
-    $('#sel2 li').on('click', function(e) {
-        $('#sel2 li').removeClass('selected');
-        $(this).addClass('selected');
-        selectVal = $(this).attr('value');
-        insertVal();
+    $('.list-box i').on('click', function() {
+        $('.filter').toggleClass('closePanel');
     });
 
-    function insertVal() {
-        console.log(selectVal);
+    $('#selectProduct li').on('click', function(e) {
+        $(this).toggleClass('selected');
+        selectVal = $(this).attr('value');
         $('#nowVal').attr('value', selectVal);
+        productCount = productCount + 1;
+        console.log('Product選了' + productCount + '個');
+        if(productCount > 1) {
+            msg = '請選擇一項';
+            $('.warnMsg').text(msg);
+            showWarn();
+        } else {
+            insertProductVal();
+        }
+    });
+
+    $('#selectLot li').on('click', function(e) {
+        $(this).toggleClass('selected');
+        selectVal = $(this).attr('value');
+        lotCount = lotCount + 1;
+        console.log('Lot選了' + lotCount + '個');
+        insertLotVal();
+    });
+
+    function showWarn() {
+        $('#selectProduct').addClass('point');
+        $('.warnMsg').show(300);
+    }
+    
+    function insertProductVal() {
+        //console.log(selectVal);
+        $('#productName').text(selectVal);
+        $('#productCount').text(productCount);
+        $('#selectProduct').removeClass('point');
+        $('.warnMsg').hide(300);
+    }
+
+    function insertLotVal() {
+        //console.log(selectVal);
+        $('#lotName').text(selectVal);
+        $('#lotCount').text(lotCount);
+        $('#selectLot').removeClass('point');
     }
 
     function sendVal() {
         console.log('送出：' + $('#nowVal').attr('value'));
     }
+
+    $('#queryButton').on('click', function() {
+        let productVal = $('#productName').text();
+        let lotVal = $('#lotName').text();
+        let insertLotCount = $('#lotCount').text();
+
+        //console.log('選擇了：' + productVal + ', 共 ' + insertProductCount + ' 項');
+        if (productVal == '') {
+            //$('#queryMsg').show(300);
+            $('#queryMsg').animate({opacity: 1, top: '-30px'});
+            $('#selectProduct').addClass('point');
+            msg = '請選擇Product';
+            msgHide();
+        } else if (lotVal == '') {
+            $('#queryMsg').animate({opacity: 1, top: '-30px'});
+            $('#selectLot').addClass('point');
+            msg = '請選擇Lot';
+            msgHide();
+        } else {
+            $('.filter').addClass('closePanel');
+            sendVal();
+        };
+
+        function msgHide() {
+            $('#queryMsg').text(msg);
+            setTimeout(function() {
+                //$("#queryMsg").hide(300);
+                $('#queryMsg').animate({opacity: 0, top: '-10px'});
+            }, 3000);
+        }
+    });
 </script>
 </body>
 </html>
