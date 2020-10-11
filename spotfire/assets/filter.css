@@ -12,12 +12,26 @@
     top:0;
     left: 0;
     font-family: Arial, Helvetica, sans-serif;
-    height: 100vh;
+    height: calc(100vh - 70px);
     padding: 10px;
     background-color: var(--bg-color);
 }
-.filter h6 {
-  margin: 2px 1px;
+.filter.closePanel,
+.closePanel .btn-content {
+  width: 50px;
+}
+.filter h3 {
+  font-size: 90%;
+  margin: 2px 1px 5px;
+  position: relative;
+}
+.filter h3>span.warnMsg {
+  color: #fddf00;
+  position: absolute;
+  font-size: 75%;
+  font-weight: 400;
+  right: 0;
+  top: 0;
 }
 
 /* date slider */
@@ -60,6 +74,117 @@
   height: 14px;
   overflow: hidden;
 }
+/* Select */
+.list-box {
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+}
+.list-box i {
+  background-color: rgba(33, 150, 243, 0.7);
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  width: 36px;
+  height: 36px;
+  padding: 5px 12px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.filder {
+  display: flex;
+  flex-direction: column;
+}
+.list-box ul {
+  background-color: rgba(255,255,255,.2);
+  border: 1px solid rgba(255,255,255,.1);
+  width: 150px;
+  height: 80px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.list-box ul.point {
+  background-color: rgba(255, 100, 100, .2);
+  border: 2px solid rgba(255, 239, 18, .8);
+}
+.list-box ul li {
+  font-size: 90%;
+  padding: 3px;
+  text-indent: 12px;
+}
+.list-box ul li.selected {
+  background-color: rgb(59, 170, 245);
+  border-left: 3px solid rgb(93, 255, 255);
+  box-sizing: border-box;
+}
+.btn-content {
+  background-color: var(--bg-color);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+#queryButton {
+  background-color: rgba(33, 150, 243, .6);
+  border-radius: 8px;
+  border: none;
+  color: #f2f2f2;
+  cursor: pointer;
+  font-size: 125%;
+  width: 75%;
+  height: 50px;
+}
+.closePanel .filder, 
+.closePanel #queryButton, 
+#productName, #productCount,
+#lotName, #lotCount {
+  display: none;
+}
+#queryMsg {
+  background-color: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 16px;
+  color: #fddf00;
+  position: absolute;
+  font-size: 90%;
+  width: 180px;
+  min-height: 24px;
+  padding: 6px;
+  text-align: center;
+  text-indent: 26px;
+  top: -30px;
+  right: 35px;
+}
+#queryMsg::before {
+  background-color: rgba(251, 255, 17, .75);
+  border: 2px solid rgba(251, 255, 17, .3);
+  border-radius: 50%;
+  color: #30383f;
+  content: '!';
+  position: absolute;
+  font-size: 80%;
+  font-weight: 800;
+  text-align: center;
+  text-indent: 0;
+  line-height: 22px;
+  width: 22px;
+  height: 22px;
+  top: 5px;
+  left: 5px;
+}
+#warnMsg {
+
+}
+
 /* Range-slider */
 .ui-slider .ui-slider-handle {
   width: 1em;
