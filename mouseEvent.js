@@ -44,9 +44,32 @@ e.preventDefault();
 
 document.body.onmousewheel = function(event){
 event = event || window.event;
-console.dir(event);
+console.dir(event)
 }
 
 document.body.addEventListener("DOMMouseScroll",function(event){
 console.dir(event);
 })
+
+var scrollFunc=function(e){
+ e=e || window.event;
+ if(e.wheelDelta && event.ctrlKey){//IE/Opera/Chrome
+  event.returnValue=false;
+ }else if(e.detail){//Firefox
+  event.returnValue=false;
+ }
+ }
+ /*註冊事件*/
+ if(document.addEventListener){
+ document.addEventListener('DOMMouseScroll',scrollFunc,false);
+ }//W3C
+ window.onmousewheel=document.onmousewheel=scrollFunc;//IE/Opera/Chrome/Safari
+
+//滑鼠滾輪控制圖片縮放 onmousewheel='return bbimg(this)'
+//mousewheel」 事件中的 「event.wheelDelta
+function bbimg(o){
+var zoom=parseInt(o.style.zoom, 10)||100;
+zoom =event.wheelDelta/12;
+if (zoom>0) o.style.zoom=zoom ‘%’;
+return false;
+}
