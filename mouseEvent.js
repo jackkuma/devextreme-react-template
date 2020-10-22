@@ -39,3 +39,14 @@ counter.innerHTML=counter.innerHTML*1 v;
 //阻止瀏覽器預設方法
 e.preventDefault();
 },false);
+
+//https://codertw.com/%E5%89%8D%E7%AB%AF%E9%96%8B%E7%99%BC/270840/
+
+document.body.onmousewheel = function(event){
+event = event || window.event;
+console.dir(event);
+}
+
+document.body.addEventListener("DOMMouseScroll",function(event){
+console.dir(event);
+})
