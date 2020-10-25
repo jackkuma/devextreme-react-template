@@ -1,26 +1,50 @@
-// disable scrolling
-$('body').bind('mousewheel touchmove', lockScroll);
-
-// enable scrolling
-$('body').unbind('mousewheel touchmove', lockScroll);
-
-
-// lock window scrolling
-function lockScroll(e) {
-    e.preventDefault();
+//https://blog.csdn.net/weixin_30892987/article/details/98312601
+//https://blog.csdn.net/lzyfn/article/details/84373935
+var element = document.getElementsByClassName('mapChart')
+        document.body.onmousewheel = function(e){
+            delEvent();
+            console.log('滾動了');
 }
 
-$('button').on('click', function() {
-     $('body').bind('mousewheel touchmove', lockScroll);
-});
+        document.body.addEventListener("DOMMouseScroll",function(e){
+            delEvent();
+            console.log('Scroll running');
+        });
+
+        function delEvent(obj, type, fn) {
+        var isFirefox = typeof document.body.style.MozUserSelect != 'undefined';
+        if (obj.removeEventListener)
+            obj.removeEventListener(isFirefox ? 'DOMMouseScroll' : type, fn, false);
+        else
+            obj.detachEvent('on' + type, fn);
+    }
+
+
+        $(document).on('mousewheel DOMMouseScroll', onMouseScroll);
+        function onMouseScroll(e){
+            e.preventDefault();
+            var wheel = e.originalEvent.wheelDelta || -e.originalEvent.detail;
+            var delta = Math.max(-1, Math.min(1, wheel) );
+            if(delta<0){
+                console.log('向下滾動');
+            } else {
+                console.log('向上滾動');
+            }
+        }
+
+        // var firefox = navigator.userAgent.indexOf( 'Firefox' ) != -1;
+        // firefox ? img.addEventListener( 'DOMMouseScroll' , MouseWheel, false ) : (img.onmousewheel = MouseWheel);
+        function MouseWheel(e) {
+            e = e || window.event;
+            if (e.preventDefault) e.preventDefault();
+            e.returnValue = false;
+        }
+
+
 
 $('body').on('mousewheel touchmove', function(e) {
       e.preventDefault();
 });
-
-$(window).scroll(function(ev) {
-  ev.preventDefault();
-}
 
 var counter=document.getElementById("counter");
 counter.addEventListener("mousewheel",function(e){
