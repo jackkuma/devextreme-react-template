@@ -9,3 +9,6 @@ webpack打包設定
 https://ithelp.ithome.com.tw/articles/10186769
 https://webpack.docschina.org/configuration/resolve/
 https://dotblogs.com.tw/wasichris/2020/01/09/112248
+
+iis部署
+https://dev.to/sumitkharche/how-to-deploy-react-application-on-iis-server-1ied
