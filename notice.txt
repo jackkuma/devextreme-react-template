@@ -19,3 +19,5 @@ https://medium.com/html-test/webpack-%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%
 iis部署
 https://create-react-app.dev/docs/proxying-api-requests-in-development/
 https://dev.to/sumitkharche/how-to-deploy-react-application-on-iis-server-1ied
+
+https://www.roundthecode.com/dotnet/asp-net-core-web-hosting/how-to-publish-an-asp-net-core-react-spa-to-iis
