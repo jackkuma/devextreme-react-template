@@ -17,9 +17,9 @@
     background-color: var(--bg-color);
 }
 .filter.closePanel,
-.closePanel .btn-content {
-  width: 50px;
-}
+.closePanel .btn-content { width: 50px;}
+
+/* 選單顯示控制*/
 .filter h3 {
   cursor: default;
   font-size: 90%;
