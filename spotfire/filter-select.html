@@ -12,8 +12,8 @@
     <input id="nowVal" type="hidden" name="nowVal" value="">
     <div class="list-box">
         <i>S</i>
-        <div class="filder">
-            <h3>Product<span class="warnMsg"></span></h3>
+        <div class="filder subordinate selectHide">
+            <h3>Product</h3>
             <ul id="selectProduct">
                 <li value="AB123">AB123</li>
                 <li value="AB456">AB456</li>
@@ -27,18 +27,16 @@
                 <li value="CB321">CB321</li>
                 <li value="CA654">CA654</li>
             </ul>
+            <span class="warnMsg"></span>
         </div>
     </div>
     <div class="list-box">
-        <i>D</i>
-        <div class="filder">
+        <i>L</i>
+        <div class="filder subordinate selectHide">
             <h3>Lot</h3>
             <ul id="selectLot">
                 <li value="AB123">AB123</li>
                 <li value="AB456">AB456</li>
-                <li value="AB789">AB789</li>
-                <li value="CD321">CD321</li>
-                <li value="CD654">CD654</li>
                 <li value="CD987">CD987</li>
                 <li value="BB123">BB123</li>
                 <li value="BA456">BA456</li>
@@ -46,6 +44,34 @@
                 <li value="CB321">CB321</li>
                 <li value="CA654">CA654</li>
             </ul>
+        </div>
+    </div>
+    <div class="list-box">
+        <i>P</i>
+        <div class="filder subordinate selectHide">
+            <h3>Product Type</h3>
+            <ul id="selectPd">
+                <li value="AB123">AB123</li>
+                <li value="AB456">AB456</li>
+                <li value="AB789">AB789</li>
+                <li value="CD321">CD321</li>
+                <li value="CD654">CD654</li>
+                <li value="CD987">CD987</li>
+            </ul>
+            <span class="warnMsg"></span>
+        </div>
+    </div>
+    <div class="list-box">
+        <i>T</i>
+        <div class="filder">
+            <h3>Technology</h3>
+            <ul id="selectList">
+                <li value="AB789">AB789</li>
+                <li value="CD321">CD321</li>
+                <li value="CD654">CD654</li>
+                <li value="CD987">CD987</li>
+            </ul>
+            <span class="warnMsg"></span>
         </div>
     </div>
     <div class='btn-content'>
@@ -69,6 +95,16 @@
     $('.list-box i').on('click', function() {
         $('.filter').toggleClass('closePanel');
     });
+
+    $('.subordinate').hover(
+        function() {
+            $(this).removeClass('selectHide');
+        }, function() {
+            if(selectVal == '') {
+                $(this).addClass('selectHide');
+            }
+        }
+    );
 
     $('#selectProduct li').on('click', function(e) {
         $(this).toggleClass('selected');
