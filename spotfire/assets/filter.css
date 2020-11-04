@@ -21,17 +21,21 @@
   width: 50px;
 }
 .filter h3 {
+  cursor: default;
   font-size: 90%;
   margin: 2px 1px 5px;
   position: relative;
 }
-.filter h3>span.warnMsg {
+.filder>span {
   color: #fddf00;
-  position: absolute;
   font-size: 75%;
   font-weight: 400;
-  right: 0;
-  top: 0;
+}
+.selectHide ul {
+  display: none;
+}
+.selectHide h3 {
+  line-height: 41px;
 }
 
 /* date slider */
@@ -108,8 +112,8 @@
   margin: 0;
 }
 .list-box ul.point {
-  background-color: rgba(255, 100, 100, .2);
-  border: 2px solid rgba(255, 239, 18, .8);
+  background-color: rgba(255, 251, 0, 0.2);
+  border: 2px solid rgb(255, 25, 25);
 }
 .list-box ul li {
   font-size: 90%;
@@ -180,9 +184,6 @@
   height: 22px;
   top: 5px;
   left: 5px;
-}
-#warnMsg {
-
 }
 
 /* Range-slider */
