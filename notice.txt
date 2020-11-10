@@ -24,3 +24,6 @@ https://www.roundthecode.com/dotnet/asp-net-core-web-hosting/how-to-publish-an-a
 
 history.back
 https://blog.csdn.net/weixin_34117211/article/details/91371392
+https://ithelp.ithome.com.tw/articles/10226370
+https://kknews.cc/zh-tw/tech/a8npkq6.html
+https://blog.csdn.net/weixin_45416217/article/details/103423474
