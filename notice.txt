@@ -12,6 +12,10 @@ https://www.itread01.com/article/1489020318.html
 https://github.com/JedWatson/react-select
 https://ant.design/components/transfer-cn/
 
+CRUD API
+https://bezkoder.com/react-hooks-crud-axios-api/
+https://bezkoder.com/react-crud-web-api/
+
 Fetch
 https://wcc723.github.io/javascript/2017/12/28/javascript-fetch/
 
