@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { SelectBox } from 'devextreme-react/select-box';
+import DataSource from 'devextreme/data/data_source';
 import axios from '../../components/api/axiosApi';
 
 import './dataTable.scss';
@@ -11,6 +12,7 @@ class SpotFire extends Component {
     super();
     this.state = {
         ProductInfo: [],
+        Response: [],
     }
 }
 
@@ -18,14 +20,12 @@ GET = async() => {
     try {
         const getProducts = await axios.get(api); 
         const ProductInfo = getProducts.data.Data;
-        console.log(ProductInfo);
-        console.log(typeof(ProductInfo));
         this.setState ({
             ProductInfo,
         });
     } 
     catch (error) {
-        alert("GET Error!!");    
+        console.log("GET Error!!" + error);
     }  
 };
 
@@ -34,6 +34,14 @@ componentDidMount() {
 }
 
  render() {
+  const productDataSource = new DataSource({
+    store: this.state.ProductInfo,
+    key: 'Product'
+  });
+
+  const Response = productDataSource._store._array;
+  console.log(Response)
+
    return (
      <Fragment>
        <div className="App">
@@ -44,7 +52,7 @@ componentDidMount() {
           <div className="dx-field-label">Product</div>
           <div className="dx-field-value">
             <SelectBox
-              items={this.state.ProductInfo}
+             dataSource={productDataSource}
               displayExpr="Product"
               valueExpr="value"
               searchEnabled={true}
@@ -54,6 +62,9 @@ componentDidMount() {
         </div>
         <select multiple>
           { this.state.ProductInfo.map(product => <option key={product.Product} value={product.Product}>{product.Product}</option>) }
+        </select>
+        <select multiple>
+          { Response.map(item => <option key={item.Product} value={item.Product}>{item.Product}</option>) }
         </select>
      </div>
      </Fragment>
