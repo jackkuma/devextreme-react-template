@@ -5,6 +5,8 @@ https://reactjs.net/getting-started/download.html
 
 SQL
 https://sqlzoo.net/wiki/SELECT_basics/zh
+http://tw.gitbook.net/sql/index.html
+https://www.1keydata.com/tw/sql/sql.html
 
 Select
 https://www.itread01.com/content/1542386293.html
