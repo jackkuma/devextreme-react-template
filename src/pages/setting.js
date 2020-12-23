@@ -12,10 +12,9 @@ import { ResponseItem } from './responseItem';
 import { SettingItem } from './settingItem';
 import './setting.scss';
 
-const CategoryData = ['WAT'];
+const CategoryData = ['test'];
 
-// const apiURL = "http://10.11.108.73:5000/iUEDACoreAPIDev/EqRanking";
-// let apiURL = "http://localhost:61388/EqRanking";
+// const apiURL = "http://localhost:3000/";
 
 class SettingPage extends Component {
   constructor() {
@@ -51,7 +50,7 @@ class SettingPage extends Component {
 
   GET = async() => {
     try {
-      const result = await axios.get('/GetInitProducts');
+      const result = await axios.get('/GetProducts');
       let getInitProduct = JSON.parse(result.data).Data;
       let allProducts = [];
       let ProductsLists = [];
@@ -77,7 +76,7 @@ class SettingPage extends Component {
     });
     console.log(product);
     try {
-      const result = await axios.post('/GetSettingsByProduct', product);
+      const result = await axios.post('/GetSettingsProduct', product);
       // console.log(result);
       const GetAllResponse = JSON.parse(result.data).Data.allResponseParams;
       const GetSetResponse = JSON.parse(result.data).Data.selectedResposnseParams;
@@ -111,7 +110,7 @@ class SettingPage extends Component {
     };
     console.log(responseData);
     try {
-      const result = await axios.post('/UpdataSettingByProduct', responseData);
+      const result = await axios.post('/UpdataSettingProduct', responseData);
       let ResponseSave = JSON.parse(result.data).Msg;
       if(ResponseSave === 'True') {
         notify('資料儲存完成');
@@ -125,7 +124,7 @@ class SettingPage extends Component {
   };
 
   // async fetchData() {
-  //   const result = await axios.get(apiURL + '/GetInitProducts');
+  //   const result = await axios.get(apiURL + '/GetProducts');
   //   const ProductInfo = JSON.parse(result.data).Data;
   //   // const Products = ProductInfo.Product;
   //   // const Category = ProductInfo.category;
@@ -162,7 +161,7 @@ class SettingPage extends Component {
     // axios({
     //     method: 'post',
     //     baseURL: apiURL,
-    //     url: 'http://localhost:61388/EqRanking/GetSettingsByProduct',
+    //     url: 'http://localhost:3000/GetSettingsProduct',
     //     data: {
     //       "Product": "A912T",
     //       "Category": "WAT"
