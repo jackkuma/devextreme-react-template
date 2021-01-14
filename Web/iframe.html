@@ -19,17 +19,12 @@
             box-shadow: 0 1px 4px #888;
             color: #fff;
             font-size: 12px;
+            min-width: 40px;
+            text-align: center;
             padding: 3px 8px;
             position: absolute;
             bottom:0;
         }
-        #chart span#range0 { bottom:30px; }
-        #chart span#range1 { bottom:60px; }
-        #chart span#range2 { bottom:90px; }
-        #chart span#range3 { bottom:120px; }
-        #chart span#range4 { bottom:150px; }
-        #chart span#range5 { bottom:180px; }
-        #chart span#range6 { bottom:210px; }
     </style>
   </head>
   <body>
@@ -66,11 +61,13 @@
         el.scrollIntoView(true, { behavior: 'smooth' });
     });
 
-    const rangeValues = ['10%','20%','30%','40%','50%','60%','70%'];
-    
+    let rangeValues = ['0.2','10','20','30','40','50.8','60.5','70','80'];
+
     $.each(rangeValues,function(idx,value){
         // console.log("Range： " + value);
-        let showVal = `<span id='range${idx}'>${value}</span>`
+        let spanShift = idx * 30;
+        // console.log(spanShift);
+        let showVal = `<span style='bottom: ${spanShift}px;'>${value}%</span>`
         $('#chart').append(showVal);
         console.log(showVal);
     });
