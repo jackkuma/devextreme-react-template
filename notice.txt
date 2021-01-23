@@ -1,6 +1,9 @@
 python
+https://cloud.tencent.com/developer/article/1724202
+https://m.yisu.com/zixun/127499.html
 https://www.bbsmax.com/A/D854aqgWdE/
 https://www.itread01.com/content/1546239278.html
+https://www.delftstack.com/zh-tw/howto/matplotlib/how-to-draw-rectangle-on-image-in-matplotlib/
 
 .NetCore
 https://reactjs.net/tutorials/aspnetcore.html
