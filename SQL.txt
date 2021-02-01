@@ -1,0 +1,3 @@
+select gender, MAX(salary) from Employee group by gender;
+
+select a.emp_id, a.name, a.dep_id, b.name as departmentName, b.floor from Employee a, Department b where a.dep_id=b.dep_id;
