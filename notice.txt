@@ -1,3 +1,12 @@
+CSV upload
+https://ithelp.ithome.com.tw/questions/10199211
+http://altoncsharp.blogspot.com/2016/11/ccsv.html
+https://www.itread01.com/content/1548156982.html
+https://www.itread01.com/content/1547334017.html
+https://stackoverflow.com/questions/20759302/upload-csv-file-to-sql-server
+https://www.aspsnippets.com/Articles/Import-Upload-CSV-file-data-to-SQL-Server-database-in-ASPNet-using-C-and-VBNet.aspx
+https://www.codeproject.com/Questions/1105499/Import-csv-file-to-database-SQL-server-in-Csharp-w
+
 React
 https://blog.csdn.net/qq_43258252/article/details/87970051
 https://blog.csdn.net/qq_35104586/article/details/81612127
