@@ -1,4 +1,8 @@
 CSV upload
+http://hk.uwenku.com/question/p-unulvkkl-kp.html
+https://www.programmersought.com/article/15213118785/
+https://www.cnblogs.com/jameslif/p/6117193.html
+https://www.encodedna.com/aspdotnet/how-to-read-data-from-csv-file-in-aspdotnet-with-streamreader-class.htm
 https://www.codingvila.com/2018/12/read-csv-file-in-aspnet-with-example-in-asp-dot-net-using-c-sharp-vb-dot-net.html
 https://ithelp.ithome.com.tw/questions/10199211
 https://ilikeprograming.pixnet.net/blog/post/215991791
