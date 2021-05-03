@@ -1,3 +1,7 @@
+spotfire
+https://community.tibco.com/questions/iron-python-script-set-custom-color-schemes
+https://community.tibco.com/wiki/how-configure-coloring-schemes-column-properties-tibco-spotfirer-using-ironpython
+
 https://codesandbox.io/s/react-virtualized-gdnlr
 https://codesandbox.io/examples/package/react-window
 
