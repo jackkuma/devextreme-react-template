@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <title>Devextreme App</title>
+    <style>
+		.circlePath {
+			width:150px;
+            height:150px;
+            background:#0cc;
+            -webkit-clip-path:circle(50% at 60% 50%);
+		}
+	</style>
+  </head>
+  <body>
+    <h1>TEST SCROLL</h1>
+    <div class="circlePath">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+                <linearGradient id="Gradient">
+                <stop offset="0" stop-color="white" stop-opacity="0" />
+                <stop offset="1" stop-color="white" stop-opacity="1" />
+                </linearGradient>
+                <mask id="Mask">
+                <rect x="0" y="0" width="300" height="300" fill="url(#Gradient)"  />
+                </mask>
+            </defs>
+            <rect x="0" y="0" width="300" height="300" fill="green" />
+            <rect x="0" y="0" width="300" height="300" fill="red" mask="url(#Mask)" />
+        </svg>
+    </div>
+    <div style="margin-top: 3em">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+                <clipPath id="c1">
+                    <circle cx="110" cy="60" r="60" />
+                </clipPath>
+            </defs>
+            <rect x="0" y="0" width="350" height="350" fill="red" clip-path="url(#c1)" />
+        </svg>
+    </div>
+</body>
+</html>
