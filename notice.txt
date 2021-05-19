@@ -1,3 +1,7 @@
+Get IP
+https://blog.caesarchi.com/2013/11/nodejs-ip.html
+https://github.com/indutny/node-ip
+
 spotfire
 https://community.tibco.com/questions/ironpython-set-document-colour-scheme
 https://community.tibco.com/wiki/how-configure-coloring-schemes-column-properties-tibco-spotfirer-using-ironpython
